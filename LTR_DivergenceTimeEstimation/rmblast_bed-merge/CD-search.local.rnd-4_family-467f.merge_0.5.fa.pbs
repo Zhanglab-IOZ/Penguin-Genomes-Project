@@ -1,0 +1,24 @@
+##PBS -N yh-JOB
+#PBS -l nodes=comput8:ppn=1
+#PBS -q blade
+#PBS -l walltime=960:00:00
+#PBS -d /public3/home/wangzn/yuanhao/penguin/TEexpansion/ann/earlGrey/ADL.v6b/strained9/ERVK/rmblast_bed-merge
+##PBS -d /public1/home/wangzn/yuanhao
+##PBS -e yh-JOB.err
+##PBS -o yh-JOB.out
+
+source ~/.bashrc
+
+#source ~/Software/Common/miniforge3/bin/activate
+#conda activate ENV
+
+#export PERL5LIB=/
+
+source ~/Software/Common/miniforge3/bin/activate
+conda activate cdd
+
+ln -s /public3/home/wangzn/yuanhao/db/cdd/data
+ln -s /public3/home/wangzn/yuanhao/db/cdd/db
+
+rpstblastn -query ./rnd-4_family-467f.merge_0.5.fa -db ./db/Cdd -evalue 0.001 -outfmt 11 -out ./rnd-4_family-467f.merge_0.5.cdd.asn -num_threads 16
+rpsbproc -i ./rnd-4_family-467f.merge_0.5.cdd.asn -o ./rnd-4_family-467f.merge_0.5.cdd.out -e 0.001 -m rep
