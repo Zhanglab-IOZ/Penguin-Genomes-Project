@@ -23,16 +23,22 @@ The following resources and software packages are required to run the analysis:
 
 
 `./rmblast/rmblast.pbs`
+
 `./rmblast/rmblast.full-len.sh`
+
 `./rmblast/rmblast.full-len.LTR.sh`
+
 `./rmblast/rmblast.full-len.LTR-iden-mya.sh`
 
 ##### 2. Full-Length ERV Alignment, Fragment Merging, and LTR Sequence Alignment (Fragmented Matches)
 
 
 `./rmblast_bed-merge/rmblast.bed-merge.sh`
+
 `./rmblast_bed-merge/rmblast.bed-merge.CD-search-full.sh`
+
 `./rmblast_bed-merge/rmblast.bed-merge.CD-search.local.rnd-1_family-57f.merge_0.5.fa.pbs`
+
 `./rmblast_bed-merge/rmblast.bed-merge.CD-search.local.rnd-5_family-10513f.merge_0.5.fa.pbs`
 
 ##### 3. Result Merging and Molecular Clock Estimation
